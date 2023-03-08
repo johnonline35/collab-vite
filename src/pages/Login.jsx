@@ -30,11 +30,7 @@ export default function Login() {
               // isLoading={loading}
               onClick={() => signInWithGoogle()}
             >
-              <Image
-                src='../../public/img/googlelogo.png'
-                height='20px'
-                mr={4}
-              />
+              <Image src='/img/googlelogo.png' height='20px' mr={4} />
               Continue with Google
             </Button>
           </Flex>

@@ -11,8 +11,11 @@ import {
   Avatar,
   AvatarBadge,
 } from "@chakra-ui/react";
+import { signout } from "../supabase/clientapp";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  const navigate = useNavigate();
   const toast = useToast();
 
   const showToast = () => {
@@ -44,7 +47,10 @@ export default function Navbar() {
           </AvatarBadge>
         </Avatar> */}
         <Text>john@instantcollab.co</Text>
-        <Button colorScheme='blue' onClick={showToast}>
+        <Button
+          colorScheme='blue'
+          onClick={() => signout().then(() => navigate("/"))}
+        >
           Logout
         </Button>
       </HStack>

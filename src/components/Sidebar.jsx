@@ -1,4 +1,4 @@
-import { AtSignIcon, CalendarIcon, EditIcon } from "@chakra-ui/icons";
+import { AtSignIcon, HamburgerIcon, EditIcon } from "@chakra-ui/icons";
 import { List, ListIcon, ListItem } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 
@@ -7,7 +7,7 @@ export default function Sidebar() {
     <List color='white' fontSize='1.2em' spacing={4}>
       <ListItem>
         <NavLink to='/console'>
-          <ListIcon as={CalendarIcon} color='white' /> Dashboard
+          <ListIcon as={HamburgerIcon} color='white' /> Dashboard
         </NavLink>
       </ListItem>
       <ListItem>

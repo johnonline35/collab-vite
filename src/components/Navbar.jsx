@@ -29,7 +29,7 @@ export default function Navbar() {
 
   return (
     <Flex as='nav' p='10px' mb='40px' alignItems='center'>
-      <Heading as='h1'>Collabs</Heading>
+      <Heading as='h1'>Collab</Heading>
       <Spacer />
 
       <HStack spacing='20px'>

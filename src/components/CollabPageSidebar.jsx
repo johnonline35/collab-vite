@@ -4,16 +4,18 @@ import {
   ChatIcon,
   CalendarIcon,
   EditIcon,
+  ArrowRightIcon,
   InfoOutlineIcon,
   SunIcon,
   QuestionOutlineIcon,
   HamburgerIcon,
 } from "@chakra-ui/icons";
 import { List, ListIcon, ListItem } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { FiDollarSign, FiUsers } from "react-icons/fi";
 
 export default function Sidebar() {
+  const params = useParams();
   return (
     <List color='white' fontSize='1.2em' spacing={4}>
       <ListItem>
@@ -22,61 +24,67 @@ export default function Sidebar() {
         </NavLink>
       </ListItem>
       <ListItem>
-        <NavLink to='/console/create'>
+        <NavLink to={`/collabs/${params.name}/team`}>
           <ListIcon as={FiUsers} color='white' />
           Team
         </NavLink>
       </ListItem>
       <ListItem>
-        <NavLink to='/console/create'>
+        <NavLink to={`/collabs/${params.name}/notes`}>
           <ListIcon as={EditIcon} color='white' />
+          Notes
+        </NavLink>
+      </ListItem>
+      <ListItem>
+        <NavLink to={`/collabs/${params.name}/nextsteps`}>
+          <ListIcon as={ArrowRightIcon} color='white' />
           Next Steps
         </NavLink>
       </ListItem>
       <ListItem>
-        <NavLink to='/console/profile'>
+        <NavLink to={`/collabs/${params.name}/challenges`}>
           <ListIcon as={QuestionOutlineIcon} color='white' />
           Challenges
         </NavLink>
       </ListItem>
       <ListItem>
-        <NavLink to='/console/profile'>
+        <NavLink to={`/collabs/${params.name}/proposals`}>
           <ListIcon as={SunIcon} color='white' />
           Proposals
         </NavLink>
       </ListItem>
       <ListItem>
-        <NavLink to='/console/profile'>
+        <NavLink to={`/collabs/${params.name}/currentstate`}>
           <ListIcon as={InfoOutlineIcon} color='white' />
           Current State
         </NavLink>
       </ListItem>
       <ListItem>
-        <NavLink to='/console/profile'>
+        <NavLink to={`/collabs/${params.name}/legaldocuments`}>
           <ListIcon as={AtSignIcon} color='white' />
           Legal Documents
         </NavLink>
       </ListItem>
       <ListItem>
-        <NavLink to='/console/profile'>
+        <NavLink to={`/collabs/${params.name}/pricing`}>
           <ListIcon as={FiDollarSign} color='white' />
           Pricing
         </NavLink>
       </ListItem>
       <ListItem>
-        <NavLink to='/console/profile'>
+        <NavLink to={`/collabs/${params.name}/timeline`}>
           <ListIcon as={CalendarIcon} color='white' />
           Timeline(s)
         </NavLink>
       </ListItem>
       <ListItem>
-        <NavLink to='/console/profile'>
+        <NavLink to={`/collabs/${params.name}/questions`}>
           <ListIcon as={ChatIcon} color='white' />
           Realtime Q&A
         </NavLink>
       </ListItem>
       <ListItem>
-        <NavLink to='/console/profile'>
+        <NavLink to={`/collabs/${params.name}/allattachments`}>
           <ListIcon as={AttachmentIcon} color='white' />
           All Attachments
         </NavLink>

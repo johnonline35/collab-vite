@@ -2,6 +2,7 @@ import { EditIcon, ViewIcon } from "@chakra-ui/icons";
 import {
   Avatar,
   Box,
+  Link,
   Button,
   Card,
   CardBody,
@@ -14,10 +15,11 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 
 export default function Dashboard() {
   const tasks = useLoaderData();
+  const params = useParams();
 
   return (
     <SimpleGrid spacing={10} minChildWidth='300px'>
@@ -28,9 +30,11 @@ export default function Dashboard() {
               <Flex gap={5}>
                 <Avatar src={task.img} />
                 <Box>
-                  <Heading as='h3' size='sm'>
-                    {task.title}
-                  </Heading>
+                  <Link href={`/collabs/${task.title}`}>
+                    <Heading as='h3' size='sm'>
+                      {task.title}
+                    </Heading>
+                  </Link>
                   <Text>Led by {task.author}</Text>
                 </Box>
               </Flex>

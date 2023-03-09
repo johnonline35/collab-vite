@@ -13,8 +13,19 @@ import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Privacy from "./pages/compliance/Privacy";
 import TermsOfService from "./pages/compliance/TermsOfService";
-import CollabPage from "./pages/CollabPage";
+import CollabPage from "./pages/collabs/CollabPageNotes";
 import CollabPageLayout from "./layouts/CollabPageLayout";
+import CollabPageTeam from "./pages/collabs/CollabPageTeam";
+import CollabPageHome from "./pages/collabs/CollabPageHome";
+import CollabPageChallenges from "./pages/collabs/CollabPageChallenges";
+import CollabPageNextSteps from "./pages/collabs/CollabPageNextSteps";
+import CollabPageProposals from "./pages/collabs/CollabPageProposals";
+import CollabPageCurrentState from "./pages/collabs/CollabPageCurrentState";
+import CollabPageLegalDocuments from "./pages/collabs/CollabPageLegalDocuments";
+import CollabPagePricing from "./pages/collabs/CollabPagePricing";
+import CollabPageTimeline from "./pages/collabs/CollabPageTimeline";
+import CollabPageQuestions from "./pages/collabs/CollabPageQuestions";
+import CollabPageAllAttachments from "./pages/collabs/CollabPageAllAttachments";
 
 // router and routes
 const router = createBrowserRouter(
@@ -23,8 +34,43 @@ const router = createBrowserRouter(
       <Route path='/' element={<Login />} />
       <Route path='/privacy' element={<Privacy />} />
       <Route path='/termsofservice' element={<TermsOfService />} />
-      <Route path='/collabs' element={<CollabPageLayout />}>
-        <Route path='/collabs/:name' element={<CollabPage />} />
+      <Route path='/collabs/:name' element={<CollabPageLayout />}>
+        <Route path='/collabs/:name' element={<CollabPageHome />} />
+        <Route path='/collabs/:name/team' element={<CollabPageTeam />} />
+        <Route path='/collabs/:name/notes' element={<CollabPage />} />
+        <Route
+          path='/collabs/:name/nextsteps'
+          element={<CollabPageNextSteps />}
+        />
+        <Route
+          path='/collabs/:name/challenges'
+          element={<CollabPageChallenges />}
+        />
+        <Route
+          path='/collabs/:name/proposals'
+          element={<CollabPageProposals />}
+        />
+        <Route
+          path='/collabs/:name/currentstate'
+          element={<CollabPageCurrentState />}
+        />
+        <Route
+          path='/collabs/:name/legaldocuments'
+          element={<CollabPageLegalDocuments />}
+        />
+        <Route path='/collabs/:name/pricing' element={<CollabPagePricing />} />
+        <Route
+          path='/collabs/:name/timeline'
+          element={<CollabPageTimeline />}
+        />
+        <Route
+          path='/collabs/:name/questions'
+          element={<CollabPageQuestions />}
+        />
+        <Route
+          path='/collabs/:name/allattachments'
+          element={<CollabPageAllAttachments />}
+        />
       </Route>
       <Route path='/console' element={<RootLayout />}>
         <Route index element={<Dashboard />} loader={tasksLoader} />

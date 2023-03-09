@@ -23,6 +23,7 @@ export default function Dashboard() {
   const tasks = useLoaderData();
   const params = useParams();
   const [companyInfo, setCompanyInfo] = useState("");
+  const [loadingCards, setLoadingCards] = useState();
 
   const getCompanyTileInfo = async () => {
     const { data, error } = await supabase.from("customer_table").select();
@@ -34,9 +35,11 @@ export default function Dashboard() {
     // .eq("customer_id", params.customer_id);
     console.log(data);
     setCompanyInfo(data);
+    setLoadingCards(false);
   };
 
   useEffect(() => {
+    setLoadingCards(true);
     getCompanyTileInfo();
   }, []);
 
@@ -49,6 +52,7 @@ export default function Dashboard() {
             borderTop='8px'
             borderColor='blue.400'
             bg='white'
+            loading={loadingCards}
           >
             <CardHeader>
               <Flex gap={5}>

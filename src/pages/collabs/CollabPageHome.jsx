@@ -15,14 +15,16 @@ export default function CollabPageHome() {
   const params = useParams();
   const [emailLink, setEmailLink] = useState();
   const [loadingToggle, setLoadingToggle] = useState(false);
+  const [customerName, setCustomerName] = useState("");
 
   const getEmailLinkState = async () => {
     const { data, error } = await supabase
       .from("customer_table")
       .select()
       .eq("customer_id", params.customer_id);
-    // console.log(data);
+
     setEmailLink(data[0].enable_calendar_link);
+    setCustomerName(data[0].customer_name);
 
     setLoadingToggle(false);
   };
@@ -44,15 +46,15 @@ export default function CollabPageHome() {
 
     setEmailLink(data[0].enable_calendar_link);
   };
-
+  console.log(params);
   return (
     <>
       <Flex mb={5}>
-        <Text>CollabPage Home for: {params.customer_id}</Text>
+        <Text>CollabPage Home for: {customerName}</Text>
       </Flex>
       <FormControl display='flex' alignItems='center'>
         <FormLabel htmlFor='email-alerts' mb='0'>
-          Enable calendar links {params.customer_name}?
+          Enable calendar links?
         </FormLabel>
         {loadingToggle ? (
           <Spinner />

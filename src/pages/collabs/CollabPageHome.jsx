@@ -43,11 +43,11 @@ export default function CollabPageHome() {
   return (
     <>
       <Flex mb={5}>
-        <Text>CollabPage Home for: {params.name}</Text>
+        <Text>CollabPage Home for: {params.customer_name}</Text>
       </Flex>
       <FormControl display='flex' alignItems='center'>
         <FormLabel htmlFor='email-alerts' mb='0'>
-          Enable email alerts?
+          Enable email alerts for {params.customer_name}?
         </FormLabel>
         <Switch
           id='email-alerts'

@@ -59,7 +59,7 @@ export default function Dashboard() {
               </Flex>
             </CardHeader>
             <CardBody color='gray.500'>
-              <Text>{info.customer_name}</Text>
+              <Text>{info.lorem}</Text>
             </CardBody>
 
             <Divider borderColor='gray.200' />

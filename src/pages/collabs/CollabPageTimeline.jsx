@@ -7,7 +7,7 @@ export default function CollabPageTimeline() {
   return (
     <>
       <Flex>
-        <Text>CollabPageTimeline for: {params.name}</Text>
+        <Text>CollabPageTimeline for: {params.customer_id}</Text>
       </Flex>
     </>
   );

@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { Form, redirect } from "react-router-dom";
 
-export default function Create() {
+export default function MasterTodoList() {
   return (
     <Box maxW='480px'>
       <Form method='post' action='/create'>

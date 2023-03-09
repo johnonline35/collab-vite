@@ -7,7 +7,7 @@ export default function CollabPageCurrentState() {
   return (
     <>
       <Flex>
-        <Text>CollabPage CollabPageCurrentState for: {params.name}</Text>
+        <Text>CollabPage CollabPageCurrentState for: {params.customer_id}</Text>
       </Flex>
     </>
   );

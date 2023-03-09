@@ -19,7 +19,7 @@ export default function Sidebar() {
   return (
     <List color='white' fontSize='1.2em' spacing={4}>
       <ListItem>
-        <NavLink to='/console'>
+        <NavLink to='/dashboard'>
           <ListIcon as={HamburgerIcon} color='white' /> Dashboard
         </NavLink>
       </ListItem>

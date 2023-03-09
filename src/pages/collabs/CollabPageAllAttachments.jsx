@@ -7,7 +7,7 @@ export default function CollabPageAllAttachments() {
   return (
     <>
       <Flex>
-        <Text>CollabPageAllAttachments for: {params.name}</Text>
+        <Text>CollabPageAllAttachments for: {params.customer_id}</Text>
       </Flex>
     </>
   );

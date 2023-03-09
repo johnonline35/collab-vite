@@ -49,7 +49,20 @@ export default function Navbar() {
         <Text>john@instantcollab.co</Text>
         <Button
           colorScheme='blue'
-          onClick={() => signout().then(() => navigate("/"))}
+          onClick={() =>
+            signout()
+              .then(
+                toast({
+                  position: "top",
+                  title: "Log out successful.",
+                  description: "You have been logged out.",
+                  status: "success",
+                  duration: 5000,
+                  isClosable: true,
+                })
+              )
+              .then(() => navigate("/"))
+          }
         >
           Logout
         </Button>

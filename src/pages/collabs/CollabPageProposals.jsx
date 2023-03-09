@@ -7,7 +7,7 @@ export default function CollabPageProposals() {
   return (
     <>
       <Flex>
-        <Text>CollabPage Proposals for: {params.name}</Text>
+        <Text>CollabPage Proposals for: {params.customer_id}</Text>
       </Flex>
     </>
   );

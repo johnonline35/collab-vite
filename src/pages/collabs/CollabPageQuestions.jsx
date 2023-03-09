@@ -7,7 +7,7 @@ export default function CollabPageQuestions() {
   return (
     <>
       <Flex>
-        <Text>CollabPageQuestions for: {params.name}</Text>
+        <Text>CollabPageQuestions for: {params.customer_id}</Text>
       </Flex>
     </>
   );

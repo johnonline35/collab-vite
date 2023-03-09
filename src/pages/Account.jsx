@@ -16,7 +16,7 @@ import {
   Tabs,
 } from "@chakra-ui/react";
 
-export default function Profile() {
+export default function Account() {
   return (
     <Tabs mt='40px' p='20px' colorScheme='blue' variant='enclosed'>
       <TabList>
@@ -29,7 +29,7 @@ export default function Profile() {
           <List spacing={4}>
             <ListItem>
               <ListIcon as={EmailIcon} />
-              Email: mario@netninja.dev
+              Email: john@instantcollab.co
             </ListItem>
             <ListItem>
               <ListIcon as={ChatIcon} />

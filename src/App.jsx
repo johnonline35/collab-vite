@@ -8,8 +8,8 @@ import {
 // layouts and pages
 import RootLayout from "./layouts/RootLayout";
 import Dashboard, { tasksLoader } from "./pages/Dashboard";
-import Create, { createAction } from "./pages/Create";
-import Profile from "./pages/Profile";
+import MasterTodoList, { createAction } from "./pages/MasterTodoList";
+import Account from "./pages/Account";
 import Login from "./pages/Login";
 import Privacy from "./pages/compliance/Privacy";
 import TermsOfService from "./pages/compliance/TermsOfService";
@@ -34,52 +34,55 @@ const router = createBrowserRouter(
       <Route path='/' element={<Login />} />
       <Route path='/privacy' element={<Privacy />} />
       <Route path='/termsofservice' element={<TermsOfService />} />
-      <Route path='/collabs/:name' element={<CollabPageLayout />}>
-        <Route path='/collabs/:name' element={<CollabPageHome />} />
-        <Route path='/collabs/:name/team' element={<CollabPageTeam />} />
-        <Route path='/collabs/:name/notes' element={<CollabPage />} />
+      <Route path='/collabs/:customer_id' element={<CollabPageLayout />}>
+        <Route path='/collabs/:customer_id' element={<CollabPageHome />} />
+        <Route path='/collabs/:customer_id/team' element={<CollabPageTeam />} />
+        <Route path='/collabs/:customer_id/notes' element={<CollabPage />} />
         <Route
-          path='/collabs/:name/nextsteps'
+          path='/collabs/:customer_id/nextsteps'
           element={<CollabPageNextSteps />}
         />
         <Route
-          path='/collabs/:name/challenges'
+          path='/collabs/:customer_id/challenges'
           element={<CollabPageChallenges />}
         />
         <Route
-          path='/collabs/:name/proposals'
+          path='/collabs/:customer_id/proposals'
           element={<CollabPageProposals />}
         />
         <Route
-          path='/collabs/:name/currentstate'
+          path='/collabs/:customer_id/currentstate'
           element={<CollabPageCurrentState />}
         />
         <Route
-          path='/collabs/:name/legaldocuments'
+          path='/collabs/:customer_id/legaldocuments'
           element={<CollabPageLegalDocuments />}
         />
-        <Route path='/collabs/:name/pricing' element={<CollabPagePricing />} />
         <Route
-          path='/collabs/:name/timeline'
+          path='/collabs/:customer_id/pricing'
+          element={<CollabPagePricing />}
+        />
+        <Route
+          path='/collabs/:customer_id/timeline'
           element={<CollabPageTimeline />}
         />
         <Route
-          path='/collabs/:name/questions'
+          path='/collabs/:customer_id/questions'
           element={<CollabPageQuestions />}
         />
         <Route
-          path='/collabs/:name/allattachments'
+          path='/collabs/:customer_id/allattachments'
           element={<CollabPageAllAttachments />}
         />
       </Route>
-      <Route path='/console' element={<RootLayout />}>
+      <Route path='/dashboard' element={<RootLayout />}>
         <Route index element={<Dashboard />} loader={tasksLoader} />
         <Route
-          path='/console/create'
-          element={<Create />}
+          path='/dashboard/mastertodolist'
+          element={<MasterTodoList />}
           action={createAction}
         />
-        <Route path='/console/profile' element={<Profile />} />
+        <Route path='/dashboard/account' element={<Account />} />
       </Route>
     </>
   )

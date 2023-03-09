@@ -15,39 +15,62 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
+import { supabase } from "../supabase/clientapp";
 
 export default function Dashboard() {
   const tasks = useLoaderData();
   const params = useParams();
+  const [companyInfo, setCompanyInfo] = useState("");
+
+  const getCompanyTileInfo = async () => {
+    const { data, error } = await supabase.from("customer_table").select();
+    // .eq("customer_id", params.customer_id);
+    console.log(data);
+    setCompanyInfo(data);
+  };
+
+  useEffect(() => {
+    getCompanyTileInfo();
+  }, []);
 
   return (
     <SimpleGrid spacing={10} minChildWidth='300px'>
-      {tasks &&
-        tasks.map((task) => (
-          <Card key={task.id} borderTop='8px' borderColor='blue.400' bg='white'>
+      {companyInfo &&
+        companyInfo.map((info) => (
+          <Card
+            key={info.customer_id}
+            borderTop='8px'
+            borderColor='blue.400'
+            bg='white'
+          >
             <CardHeader>
               <Flex gap={5}>
-                <Avatar src={task.img} />
+                {/* <Avatar src={info.img} /> */}
                 <Box>
-                  <Link href={`/collabs/${task.title}`}>
+                  <Link href={`/collabs/${info.customer_id}`}>
                     <Heading as='h3' size='sm'>
-                      {task.title}
+                      {info.customer_name}
                     </Heading>
                   </Link>
-                  <Text>Led by {task.author}</Text>
+                  <Text>Led by {info.rep_id}</Text>
                 </Box>
               </Flex>
             </CardHeader>
             <CardBody color='gray.500'>
-              <Text>{task.description}</Text>
+              <Text>{info.customer_name}</Text>
             </CardBody>
 
             <Divider borderColor='gray.200' />
 
             <CardFooter>
               <HStack>
-                <Button variant='ghost' leftIcon={<ViewIcon />}>
+                <Button
+                  onClick={() => {}}
+                  variant='ghost'
+                  leftIcon={<ViewIcon />}
+                >
                   View
                 </Button>
               </HStack>

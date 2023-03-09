@@ -6,18 +6,18 @@ export default function Sidebar() {
   return (
     <List color='white' fontSize='1.2em' spacing={4}>
       <ListItem>
-        <NavLink to='/console'>
+        <NavLink to='/dashboard'>
           <ListIcon as={HamburgerIcon} color='white' /> Dashboard
         </NavLink>
       </ListItem>
       <ListItem>
-        <NavLink to='/console/create'>
+        <NavLink to='/dashboard/mastertodolist'>
           <ListIcon as={EditIcon} color='white' />
           Master ToDo List
         </NavLink>
       </ListItem>
       <ListItem>
-        <NavLink to='/console/profile'>
+        <NavLink to='/dashboard/account'>
           <ListIcon as={AtSignIcon} color='white' />
           Account
         </NavLink>

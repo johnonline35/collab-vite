@@ -7,7 +7,9 @@ export default function CollabPageLegalDocuments() {
   return (
     <>
       <Flex>
-        <Text>CollabPage CollabPageLegalDocuments for: {params.name}</Text>
+        <Text>
+          CollabPage CollabPageLegalDocuments for: {params.customer_id}
+        </Text>
       </Flex>
     </>
   );

@@ -7,7 +7,7 @@ export default function CollabPagePricing() {
   return (
     <>
       <Flex>
-        <Text>CollabPagePricing for: {params.name}</Text>
+        <Text>CollabPagePricing for: {params.customer_id}</Text>
       </Flex>
     </>
   );

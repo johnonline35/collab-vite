@@ -7,7 +7,7 @@ export default function CollabPageTeam() {
   return (
     <>
       <Flex>
-        <Text>CollabPage Team for: {params.name}</Text>
+        <Text>CollabPage Team for: {params.customer_id}</Text>
       </Flex>
     </>
   );

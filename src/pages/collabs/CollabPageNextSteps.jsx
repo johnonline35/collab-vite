@@ -7,7 +7,7 @@ export default function CollabPageNextSteps() {
   return (
     <>
       <Flex>
-        <Text>CollabPage Next steps for: {params.name}</Text>
+        <Text>CollabPage Next steps for: {params.customer_id}</Text>
       </Flex>
     </>
   );

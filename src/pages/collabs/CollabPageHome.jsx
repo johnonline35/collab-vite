@@ -5,6 +5,7 @@ import {
   Switch,
   Text,
   Textarea,
+  Spinner,
 } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -13,6 +14,7 @@ import { supabase } from "../../supabase/clientapp";
 export default function CollabPageHome() {
   const params = useParams();
   const [emailLink, setEmailLink] = useState();
+  const [loadingToggle, setLoadingToggle] = useState(false);
 
   const getEmailLinkState = async () => {
     const { data, error } = await supabase
@@ -21,9 +23,12 @@ export default function CollabPageHome() {
       .eq("customer_id", params.customer_id);
     console.log(data);
     setEmailLink(data[0].enable_calendar_link);
+
+    setLoadingToggle(false);
   };
 
   useEffect(() => {
+    setLoadingToggle(true);
     getEmailLinkState();
   }, []);
 
@@ -43,17 +48,22 @@ export default function CollabPageHome() {
   return (
     <>
       <Flex mb={5}>
-        <Text>CollabPage Home for: {params.customer_name}</Text>
+        <Text>CollabPage Home for: {params.customer_id}</Text>
       </Flex>
       <FormControl display='flex' alignItems='center'>
         <FormLabel htmlFor='email-alerts' mb='0'>
-          Enable email alerts for {params.customer_name}?
+          Enable calendar links {params.customer_name}?
         </FormLabel>
-        <Switch
-          id='email-alerts'
-          isChecked={emailLink}
-          onChange={() => updateEmailToggle()}
-        />
+        {loadingToggle ? (
+          <Spinner />
+        ) : (
+          <Switch
+            id='email-alerts'
+            isChecked={emailLink}
+            onChange={() => updateEmailToggle()}
+            loading={loadingToggle}
+          />
+        )}
       </FormControl>
     </>
   );

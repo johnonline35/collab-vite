@@ -21,7 +21,7 @@ export default function CollabPageHome() {
       .from("customer_table")
       .select()
       .eq("customer_id", params.customer_id);
-    console.log(data);
+    // console.log(data);
     setEmailLink(data[0].enable_calendar_link);
 
     setLoadingToggle(false);
@@ -33,14 +33,14 @@ export default function CollabPageHome() {
   }, []);
 
   const updateEmailToggle = async () => {
-    console.log("toggle");
+    // console.log("toggle");
     const { data, error } = await supabase
       .from("customer_table")
       .update({ enable_calendar_link: !emailLink })
       .eq("customer_id", params.customer_id)
       .select();
 
-    console.log(data);
+    // console.log(data);
 
     setEmailLink(data[0].enable_calendar_link);
   };

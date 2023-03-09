@@ -26,6 +26,11 @@ export default function Dashboard() {
 
   const getCompanyTileInfo = async () => {
     const { data, error } = await supabase.from("customer_table").select();
+    const { data: reps } = await supabase.from("rep_table").select();
+    for (let i = 0; i < data.length; i++) {
+      data[i].rep = reps[0];
+      // TODO: Find rep based on ID
+    }
     // .eq("customer_id", params.customer_id);
     console.log(data);
     setCompanyInfo(data);
@@ -54,7 +59,7 @@ export default function Dashboard() {
                       {info.customer_name}
                     </Heading>
                   </Link>
-                  <Text>Led by {info.rep_id}</Text>
+                  <Text>Led by {info.rep.rep_name}</Text>
                 </Box>
               </Flex>
             </CardHeader>

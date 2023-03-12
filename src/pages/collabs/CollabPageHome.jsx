@@ -4,7 +4,6 @@ import {
   FormLabel,
   Switch,
   Text,
-  Textarea,
   Spinner,
 } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
@@ -46,7 +45,7 @@ export default function CollabPageHome() {
 
     setEmailLink(data[0].enable_calendar_link);
   };
-  console.log(params);
+  // console.log(companyInfoState);
   return (
     <>
       <Flex mb={5}>

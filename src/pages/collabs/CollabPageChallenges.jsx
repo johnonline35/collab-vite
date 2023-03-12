@@ -1,4 +1,4 @@
-import { Flex, Text, Textarea } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 
 export default function CollabPageChallenges() {

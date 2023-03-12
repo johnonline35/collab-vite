@@ -10,7 +10,7 @@ export default function CollabPage() {
         <Text>CollabPage for: {params.customer_id}</Text>
       </Flex>
       <Flex>
-        <Textarea width='960px'></Textarea>
+        <Textarea variant='unstyled' width='960px'></Textarea>
       </Flex>
     </>
   );

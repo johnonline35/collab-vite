@@ -4,10 +4,11 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
+import Dashboard from "./pages/LazyLoadDashboard";
 
 // layouts and pages
 import RootLayout from "./layouts/RootLayout";
-import Dashboard, { tasksLoader } from "./pages/Dashboard";
+import { tasksLoader } from "./pages/Dashboard";
 import MasterTodoList, { createAction } from "./pages/MasterTodoList";
 import Account from "./pages/Account";
 import Login from "./pages/Login";

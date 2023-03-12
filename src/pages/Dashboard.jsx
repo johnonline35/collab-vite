@@ -1,6 +1,5 @@
 import { EditIcon, ViewIcon } from "@chakra-ui/icons";
 import {
-  Avatar,
   Box,
   Link,
   Button,
@@ -18,30 +17,51 @@ import {
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { supabase } from "../supabase/clientapp";
+import { useRecoilState } from "recoil";
+import { companyInfoState } from "../atoms/authAtom";
+import { FetchWrapper } from "../util/helper";
+import { DashboardLoader } from "./LazyLoadDashboard";
 
 export default function Dashboard() {
   const tasks = useLoaderData();
   const params = useParams();
-  const [companyInfo, setCompanyInfo] = useState("");
+  const [companyInfo, setCompanyInfo] = useRecoilState(companyInfoState);
   const [loadingCards, setLoadingCards] = useState();
 
+  // console.log(companyInfo);
+
   const getCompanyTileInfo = async () => {
-    const { data, error } = await supabase.from("customer_table").select();
-    const { data: reps } = await supabase.from("rep_table").select();
-    for (let i = 0; i < data.length; i++) {
-      data[i].rep = reps[0];
-      // TODO: Find rep based on ID
-    }
-    // .eq("customer_id", params.customer_id);
-    console.log(data);
-    setCompanyInfo(data);
-    setLoadingCards(false);
+    FetchWrapper(
+      supabase.from("customer_table").select(),
+      supabase.from("rep_table").select()
+    ).then((results) => {
+      // console.log("Check this one:", results);
+      const [value1, value2] = results;
+      const companyObject = value1.data;
+      const reps = value2.data;
+      for (let i = 0; i < companyObject.length; i++) {
+        companyObject[i].rep = reps[0];
+      }
+      // console.log(data);
+      setCompanyInfo(companyObject);
+      setLoadingCards(false);
+    });
   };
+  // const { data, error } = await supabase.from("customer_table").select();
+  // const { data: reps } = await supabase.from("rep_table").select();
+
+  // TODO: Find rep based on ID
+
+  // .eq("customer_id", params.customer_id);
 
   useEffect(() => {
     setLoadingCards(true);
     getCompanyTileInfo();
   }, []);
+
+  if (loadingCards) {
+    return <DashboardLoader />;
+  }
 
   return (
     <SimpleGrid spacing={10} minChildWidth='300px'>

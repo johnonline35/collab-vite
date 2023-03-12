@@ -1,4 +1,4 @@
-import { EditIcon, ViewIcon } from "@chakra-ui/icons";
+import { ViewIcon } from "@chakra-ui/icons";
 import {
   Box,
   Link,
@@ -23,7 +23,7 @@ import { FetchWrapper } from "../util/helper";
 import { DashboardLoader } from "./LazyLoadDashboard";
 
 export default function Dashboard() {
-  const tasks = useLoaderData();
+  // const tasks = useLoaderData();
   const params = useParams();
   const [companyInfo, setCompanyInfo] = useRecoilState(companyInfoState);
   const [loadingCards, setLoadingCards] = useState();
@@ -110,8 +110,8 @@ export default function Dashboard() {
   );
 }
 
-export const tasksLoader = async () => {
-  const res = await fetch("http://localhost:3000/tasks");
+// export const tasksLoader = async () => {
+//   const res = await fetch("http://localhost:3000/tasks");
 
-  return res.json();
-};
+//   return res.json();
+// };

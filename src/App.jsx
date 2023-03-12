@@ -8,7 +8,7 @@ import Dashboard from "./pages/LazyLoadDashboard";
 
 // layouts and pages
 import RootLayout from "./layouts/RootLayout";
-import { tasksLoader } from "./pages/Dashboard";
+// import { tasksLoader } from "./pages/Dashboard";
 import MasterTodoList, { createAction } from "./pages/MasterTodoList";
 import Account from "./pages/Account";
 import Login from "./pages/Login";
@@ -77,7 +77,7 @@ const router = createBrowserRouter(
         />
       </Route>
       <Route path='/dashboard' element={<RootLayout />}>
-        <Route index element={<Dashboard />} loader={tasksLoader} />
+        <Route index element={<Dashboard />} />
         <Route
           path='/dashboard/mastertodolist'
           element={<MasterTodoList />}

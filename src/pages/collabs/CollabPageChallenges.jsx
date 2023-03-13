@@ -6,8 +6,14 @@ export default function CollabPageChallenges() {
 
   return (
     <>
-      <Flex>
-        <Text>CollabPage Challenges for: {params.customer_id}</Text>
+      <Flex mb='20px'>
+        <Text>Challenges Page for: {params.customer_id}</Text>
+      </Flex>
+      <Flex mb='20px'>
+        <Text>
+          This page will replicate the information taken from notes that use
+          @challenge, and will generate a new bullet item for each @challenge.
+        </Text>
       </Flex>
     </>
   );

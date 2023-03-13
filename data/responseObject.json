@@ -1,0 +1,87 @@
+{
+  "NameOfCompany (taken from guest attendee email url splice from @ to .com)": [
+    {
+       "meetingId": 1,
+       "date":"meetingDate",
+       "attendee-list":[
+        {
+            "first-name": "John",
+            "last-name": "Childs-Eddy",
+            "email": "johnchildseddygmail.com",
+            "avatar" : "avatarURL",
+            "organizer": "true",
+            "collabUser" : "true",
+            "primaryContact" : "false"
+        },
+        {
+            "first-name": "Guest",
+            "last-name": "User",
+            "email": "guestEmail1@test.com",
+            "avatar" : "avatarURL",
+            "organizer": "false",
+            "collabUser" : "false",
+            "primaryContact" : "true"
+        }
+       ]
+    },
+    {
+       "meetingId": 2,
+       "date":"nextMeetingDate",
+       "attendee-list":[
+        {
+            "first-name": "John",
+            "last-name": "Childs-Eddy",
+            "email": "johnchildseddygmail.com",
+            "avatar" : "avatarURL",
+            "organizer": "true",
+            "collabUser" : "true",
+            "primaryContact" : "false"
+        },
+        {
+            "first-name": "Guest",
+            "last-name": "User",
+            "email": "guestEmail1@test.com",
+            "avatar" : "avatarURL",
+            "organizer": "false",
+            "collabUser" : "false",
+            "primaryContact" : "true"
+        }
+       ]
+    }
+  ],
+  "NameOfCompany2 (taken from guest attendee email url splice from @ to .com)": [
+    {
+       "meetingId": 1,
+       "date":"meetingDate",
+       "attendee-list":[
+        {
+            "first-name": "John",
+            "last-name": "Childs-Eddy",
+            "email": "johnchildseddygmail.com",
+            "avatar" : "avatarURL",
+            "organizer": "true",
+            "collabUser" : "true",
+            "primaryContact" : "false"
+        },
+        {
+            "first-name": "LookyGuest",
+            "last-name": "User2",
+            "email": "guestEmail2@test.com",
+            "avatar" : "avatarURL",
+            "organizer": "false",
+            "collabUser" : "false",
+            "primaryContact" : "true"
+        },
+        {
+            "first-name": "GuestFriend",
+            "last-name": "User5",
+            "email": "guestfriend@test.com",
+            "avatar" : "avatarURL",
+            "organizer": "false",
+            "collabUser" : "false",
+            "primaryContact" : "false"
+        }
+       ]
+    }
+  ]
+}

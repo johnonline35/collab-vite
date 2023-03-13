@@ -49,7 +49,7 @@ export default function CollabPageHome() {
   return (
     <>
       <Flex mb={5}>
-        <Text>CollabPage Home for: {customerName}</Text>
+        <Text>Home & Settings Page for: {customerName}</Text>
       </Flex>
       <FormControl display='flex' alignItems='center'>
         <FormLabel htmlFor='email-alerts' mb='0'>

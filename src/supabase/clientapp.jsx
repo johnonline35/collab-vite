@@ -18,6 +18,7 @@ export async function signInWithGoogle() {
       },
     },
   });
+  console.log(data);
 }
 
 export async function signout() {

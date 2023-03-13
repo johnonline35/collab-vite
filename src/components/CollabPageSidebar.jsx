@@ -53,12 +53,12 @@ export default function Sidebar() {
           Proposals
         </NavLink>
       </ListItem>
-      <ListItem>
+      {/* <ListItem>
         <NavLink to={`/collabs/${params.customer_id}/currentstate`}>
           <ListIcon as={InfoOutlineIcon} color='white' />
           Current State
         </NavLink>
-      </ListItem>
+      </ListItem> */}
       <ListItem>
         <NavLink to={`/collabs/${params.customer_id}/legaldocuments`}>
           <ListIcon as={AtSignIcon} color='white' />

@@ -6,8 +6,14 @@ export default function CollabPageNextSteps() {
 
   return (
     <>
-      <Flex>
+      <Flex mb='20px'>
         <Text>CollabPage Next steps for: {params.customer_id}</Text>
+      </Flex>
+      <Flex mb='20px'>
+        <Text>
+          This page will replicate the information taken from notes that use
+          @next, and will generate a new bullet item for each @next.
+        </Text>
       </Flex>
     </>
   );

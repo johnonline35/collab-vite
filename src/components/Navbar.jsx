@@ -37,7 +37,7 @@ export default function Navbar() {
 
       <HStack spacing='20px'>
         <Box bg='gray.200' p='10px'>
-          J
+          <Text>Help?</Text>
         </Box>
         {/* <Avatar name='John' src='/img/mario.png'>
           <AvatarBadge width='1.3em' bg='red.500'>
@@ -46,7 +46,7 @@ export default function Navbar() {
             </Text>
           </AvatarBadge>
         </Avatar> */}
-        <Text>john@instantcollab.co</Text>
+        <Text>John Childs-Eddy: Account</Text>
         <Button
           colorScheme='blue'
           onClick={() =>

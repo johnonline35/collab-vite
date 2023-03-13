@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { RecoilRoot } from "recoil";
+import { BrowserRouter } from "react-router-dom";
 
 // extend the theme
 
@@ -26,7 +27,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <RecoilRoot>
     <ChakraProvider theme={theme}>
       <React.StrictMode>
-        <App />
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
       </React.StrictMode>
     </ChakraProvider>
   </RecoilRoot>
